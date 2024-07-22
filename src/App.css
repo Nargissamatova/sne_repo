@@ -10,6 +10,13 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 2em;
+  margin: 2em 0;
+}
+
+.tile h1 {
+  font-size: 1.2em;
+
 }
 
 .board {
