@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Board from "./Board";
 
 const PLAYER_X = "X";
 const PLAYER_O = "O";
 
+function checkWinner() {
+  console.log("check winner");
+}
+
 function TicTacToe() {
   const [tiles, setTiles] = useState(Array(9).fill(null)); // array with the length of 9 and fill all slots with null
   const [playerTurn, setPlayerTurn] = useState(PLAYER_X);
+  const [strikeClass, setStrikeClass] = useState();
 
   const handleTileClick = (index) => {
     if (tiles[index] !== null) {
@@ -23,6 +28,10 @@ function TicTacToe() {
     }
   };
 
+  useEffect(() => {
+    checkWinner();
+  }, [tiles]);
+
   return (
     <div>
       <h1>Tic Tac Toe</h1>
@@ -30,6 +39,7 @@ function TicTacToe() {
         playerTurn={playerTurn}
         tiles={tiles}
         onTileClick={handleTileClick}
+        strikeClass={strikeClass}
       />
     </div>
   );
