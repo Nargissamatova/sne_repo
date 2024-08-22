@@ -1,3 +1,5 @@
+// smth
+
 pipeline {
     agent any
     stages {
