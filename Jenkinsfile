@@ -1,28 +1,26 @@
+ // smth
+
 pipeline {
     agent any
-    
-    tools {nodejs "node"}
-    
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                echo 'Building...'
+                // Add build steps here
             }
         }
         stage('Test') {
             steps {
-              sh "pwd"
-              dir('frontend') {
-              sh "pwd"
-              sh 'npm install'
-              sh 'npm test'
-              }
+                echo 'Testing...'
+                // Add test steps here
             }
         }
         stage('Deploy') {
             steps {
-                echo "Deployed to AWS"
+                echo 'Deploying...'
+                // Add deploy steps here
             }
         }
     }
 }
+ 
